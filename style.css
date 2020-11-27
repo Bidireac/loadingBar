@@ -1,0 +1,90 @@
+:root {
+	--width: 0;
+	--blur: 100px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#background {
+	position: absolute;
+	width: 101%;
+	height: 101%;
+	background-image: url("https://source.unsplash.com/random/1920x1080");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	filter: blur(var(--blur));
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 55em;
+	height: 17em;
+	border-radius: 4em;
+	opacity: 0.8;
+	background-color: #d8d8d8;
+	box-shadow: 0px 0px 30px 0px #674fa7;
+}
+
+#loading {
+	position: relative;
+	width: 800px;
+	height: 4em;
+	background-color: #d8d8d8;
+	border-radius: 2em;
+	display: flex;
+	align-items: center;
+}
+
+#loading::before {
+	position: absolute;
+	content: attr(data-loading);
+	background: linear-gradient(to right, #a596d1, #dfb2d1);
+	box-shadow: 0 3px 3px -5px #674fa7, 0 2px 5px #674fa7;
+	width: calc(var(--width, 0) * 1%);
+	min-width: 4em;
+	max-width: calc(100% - .05em);
+	border-radius: 2em;
+	top: .05em;
+	bottom: .05em;
+	left: .05em;
+}
+
+#reload {
+	font-family: 'Montserrat', sans-serif;
+	margin: 1em;
+	padding: .5em;
+	border-radius: 1em;
+	font-size: 1.5em;
+	outline: none;
+	cursor: pointer;
+	background-color: #dfb2d1;
+	border: none;
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+i {
+	transform: scaleX(-1);
+	font-size: .8em;
+}
